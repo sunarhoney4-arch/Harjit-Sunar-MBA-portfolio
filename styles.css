@@ -1,0 +1,205 @@
+/* --- Modern gradient & card style --- */
+body {
+  /* soft modern gradient background */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f5f7fa;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* make Quarto content box stand out slightly */
+main.content {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+/* headings pop with gradient accent */
+h1, h2, h3 {
+  background: linear-gradient(90deg, #25e3e6, #00b3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* links */
+a {
+  color: #25e3e6;
+  text-decoration: none;
+}
+a:hover {
+  color: #00f5ff;
+  text-decoration: underline;
+}
+
+/* optional: make profile logo round */
+img {
+  border-radius: 12px;
+}
+/* --- Social media circular glowing buttons (Royal Blue & Gold theme) --- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #f5b700;           /* gold outline */
+  color: #f5b700;                      /* gold icon */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
+}
+
+/* Hover animation — gold glow + blue inversion */
+.social-icons a:hover {
+  background: linear-gradient(135deg, #0a1f44, #102a5c);
+  color: #ffd84d;
+  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
+  transform: scale(1.15);
+}
+
+.social-icons a {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 0.6s ease-out forwards;
+}
+
+.social-icons a:nth-child(1) { animation-delay: 0.2s; }
+.social-icons a:nth-child(2) { animation-delay: 0.4s; }
+.social-icons a:nth-child(3) { animation-delay: 0.6s; }
+.social-icons a:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* --- Hero layout side-by-side --- */
+.hero-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* stacks vertically on smaller screens */
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-right {
+  flex: 1.3;
+  min-width: 320px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+  padding: 16px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero-right h3 {
+  color: #ffd84d;
+  margin: 0 0 10px 0;
+}
+
+.hero-right p {
+  color: #f1f1f1;
+  line-height: 1.7;
+}
+
+/* Social icons layout (horizontal row) */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #f5b700;
+  color: #f5b700;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #0a1f44, #102a5c);
+  color: #ffd84d;
+  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
+  transform: scale(1.12);
+}
+:root{
+  /* Background + panel */
+  --bg-1: #0f2027;                 /* page gradient start */
+  --bg-2: #203a43;                 /* page gradient mid  */
+  --bg-3: #2c5364;                 /* page gradient end  */
+  --panel-solid: #1B2F36;          /* solid eq. of your glass panel */
+  --panel: rgba(27, 47, 54, 0.86); /* glass overlay that guarantees contrast */
+
+  /* Text & accents (all AA+, most AAA) */
+  --text:    #EAF2F7;  /* body */
+  --muted:   #C8D1DA;  /* secondary text */
+  --heading: #CFF1F5;  /* h1–h3 */
+  --link:    #25E3E6;  /* links */
+  --gold:    #F5B700;  /* icon ring */
+}
+
+/* page background */
+body{
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  color: var(--text);
+}
+
+/* main content container (your big rounded panel) */
+main.content{
+  background: var(--panel);
+  color: var(--text);
+}
+
+/* headings and links with accessible contrast */
+h1,h2,h3{ color: var(--heading); }
+a{ color: var(--link); }
+
+/* the “About Myself” block (keeps contrast even on gradients) */
+.hero-right blockquote{
+  border-left: 3px solid rgba(255,255,255,0.65);
+  color: var(--text);
+}
+.hero-right p{ color: var(--muted); }
+
+/* social icons already use gold; ensure focus & hover stay visible */
+.social-icons a{
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.social-icons a:focus{
+  outline: 3px solid var(--heading);
+  outline-offset: 2px;
+}
