@@ -1,61 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Harjit Sunar — MBA Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>About · Harjit Sunar — MBA Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (same as index) -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <div class="page-shell">
+    <!-- Top Nav (same as index, but Home goes back to index.html) -->
+    <header class="site-header">
+      <div class="brand-area">
+        <div class="brand-icon">H</div>
+        <span class="brand-name">Harjit Sunar</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">Harjit Sunar</div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-    </ul>
-  </nav>
+    <main class="main-content">
+      <section class="page-section-card">
+        <h1>About Me</h1>
+        <p class="section-intro">
+          MBA Candidate specializing in the strategic application of AI and Data Analytics
+          to inform and drive Strategic Management. With a proven history in retail, logistics,
+          and e-commerce, I have consistently enhanced efficiency, boosted customer satisfaction,
+          and generated measurable revenue results. I focus on leveraging analytical insights
+          combined with people-first leadership to deliver quantifiable business impact.
+        </p>
 
-  <!-- About Section -->
-  <section id="about-page">
-    <h2>About Me</h2>
-    <p>
-      MBA Candidate specializing in the strategic application of AI and Data Analytics to inform
-      and drive Strategic Management. With a proven history in retail, logistics, and e-
-      commerce, I have consistently enhanced efficiency, boosted customer satisfaction, and
-      generated measurable revenue results. I am focused on leveraging analytical insights
-      combined with people-first leadership to deliver quantifiable business impact.
-    </p>
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <p>
-      <strong>Master of Business Administration (MBA)</strong> — University Canada West (Expected 2026)<br>
-      Courses: Application of AI in Business, Business Leadership, Digital Transformation, Digital Marketing..<br>
-      <em>Capstone Focus:</em> Integrating AI-driven decision-support systems in retail operations.
-    </p>
+        <div class="two-column-layout">
+          <!-- Education -->
+          <div class="column-block">
+            <h2>Education</h2>
 
-    <p>
-      <strong>Bachelor of Commerce (B.Com)</strong> — Guru Nanak Dev University, India (2023)<br>
-      Courses: Accounting, Finance, Leadership, E-commerce Management.<br>
-      <em>Elective Focus:</em> Operations Management, Banking and Insurance management, Financial Accounting.
-    </p>
-  <!-- Professional Experience Section -->
-  <section id="experience">
-    <h2>Professional Experience</h2>
+            <div class="item-block">
+              <h3>Master of Business Administration (MBA)</h3>
+              <p class="item-meta">
+                University Canada West · Vancouver, BC · <strong>Expected 2026</strong>
+              </p>
+              <p>
+                <strong>Key Courses:</strong> Application of AI in Business, Business Leadership,
+                Digital Transformation, Digital Marketing.
+              </p>
+              <p>
+                <strong>Capstone Focus:</strong> Integrating AI-driven decision-support systems
+                in retail operations.
+              </p>
+            </div>
 
-    <h3>Next Diamond Immigration</h3>
-    <p>Managed daily accounting support tasks, including invoicing, expense reporting, and vendor relations, ensuring a smooth cash flow process and on-time payments. Reduced quarterly document retrieval time by 20% by creating and maintaining a digital filing system for contracts, receipts, and client records. Assisted with payroll processing and benefits coordination for a 50+ person team, maintaining 100% data confidentiality and compliance with labor laws.</p>
+            <div class="item-block">
+              <h3>Bachelor of Commerce (B.Com)</h3>
+              <p class="item-meta">
+                Guru Nanak Dev University · India · 2023
+              </p>
+              <p>
+                <strong>Courses:</strong> Accounting, Finance, Leadership, E-commerce Management.<br>
+                <strong>Elective Focus:</strong> Operations Management, Banking and Insurance
+                Management, Financial Accounting.
+              </p>
+            </div>
+          </div>
 
-    <h3>Cashier- Petro Canada</h3>
-    <p>Managed high-volume fuel and retail transactions, consistently processing 150+ customer purchases per shift with zero cash discrepancies, maintaining 100% till accuracy</p>
+          <!-- Experience -->
+          <div class="column-block">
+            <h2>Professional Experience</h2>
 
-    <a href="index.html" class="btn">← Back to Portfolio</a>
-  </section>
+            <div class="item-block">
+              <h3>Accounting &amp; Operations Assistant</h3>
+              <p class="item-meta">Next Diamond Immigration</p>
+              <p>
+                Managed daily accounting support tasks including invoicing, expense reporting,
+                and vendor relations, ensuring a smooth cash-flow process and on-time payments.
+                Reduced quarterly document-retrieval time by 20% by implementing a digital filing
+                system for contracts, receipts, and client records.
+              </p>
+              <p>
+                Assisted with payroll processing and benefits coordination for a 50+ person team,
+                maintaining 100% data confidentiality and compliance with labour regulations.
+              </p>
+            </div>
 
+            <div class="item-block">
+              <h3>Customer Service &amp; Cash Handling</h3>
+              <p class="item-meta">Cashier · Petro-Canada</p>
+              <p>
+                Managed high-volume fuel and retail transactions, consistently processing 150+
+                customer purchases per shift with zero cash discrepancies and 100% till accuracy.
+                Delivered friendly, efficient service in a fast-paced convenience retail
+                environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Harjit Sunar · MBA Portfolio</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
