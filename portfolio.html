@@ -1,63 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Harjit Sunar — MBA Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Portfolio · Harjit Sunar — MBA Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
-  
- <!-- Portfolio Section Ends -->
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-area">
+        <div class="brand-icon">H</div>
+        <span class="brand-name">Harjit Sunar</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="page-section-card">
+        <h1>Key Projects</h1>
+        <p class="section-intro">
+          Selected academic and client projects that demonstrate my ability
+          to combine analytics, strategy, and practical execution.
+        </p>
+
+        <div class="project-list">
+          <article class="project-card">
+            <h2>FlexLearn — AI-Driven Course Customization Platform</h2>
+            <p class="item-meta">EdTech · Product &amp; Go-to-Market Strategy</p>
+            <p>
+              Designed a next-generation e-learning platform that uses
+              machine-learning models to customize course curricula based on
+              individual learning pace and career goals.
+            </p>
+            <ul class="skill-list">
+              <li>Built a complete Business Model Canvas and value proposition.</li>
+              <li>Created a low-fidelity prototype and user-journey mapping.</li>
+              <li>Defined a market-entry strategy focused on Lifetime Value (LTV)
+                  optimization and retention.</li>
+            </ul>
+            <p class="project-note">
+              <strong>Outcome:</strong> Demonstrated how adaptive content can
+              increase learner engagement and accelerate skill acquisition for
+              corporate training and higher-education partners.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h2>GridSmart — Renewable Energy Project Prioritization</h2>
+            <p class="item-meta">Energy · Project Portfolio &amp; PMO Design</p>
+            <p>
+              Developed a portfolio-management framework to prioritize regional
+              solar and wind projects using SWOT and Critical Path Method (CPM)
+              analysis.
+            </p>
+            <ul class="skill-list">
+              <li>Defined success metrics such as ROI, MW-hours generated,
+                  and payback period.</li>
+              <li>Proposed a centralized Project Management Office (PMO) model
+                  for project selection, resource allocation, and risk mitigation.</li>
+              <li>Outlined dashboard concepts for executive-level governance
+                  using interactive KPIs.</li>
+            </ul>
+            <p class="project-note">
+              <strong>Outcome:</strong> Showed how structured portfolio
+              governance can align infrastructure investments with federal
+              sustainability targets and regional energy demand.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Harjit Sunar · MBA Portfolio</span>
+    </footer>
+  </div>
 
   <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
-<body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">Harjit Sunar </div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
-    </ul>
-  </nav>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio-page">
-    <h2>Key Projects</h2>
-
-    <h3>FlexLearn — AI-Driven Course Customization Platform</h3>
-    <p>
-      Designed a next-generation EdTech platform utilizing machine learning to customize course curricula based on individual learning pace and career goals.
-      Established the Business Model Canvas (BMC), developed a low-fidelity prototype, and formulated a market entry strategy focusing on Lifetime Value (LTV)
-      optimization (Gartner Hype Cycle, 2024).
-    </p>
-    <p><em>Case Summary →</em> FlexLearn is an adaptive e-learning solution that moves beyond static content. The platform uses AI to continuously assess student
-      performance and dynamically adjust the curriculum, resources, and assessment difficulty. It aims to maximize knowledge retention and accelerate
-      professional skill acquisition for corporate training and higher education markets.
-    </p>
-
-    <h3>GridSmart — Renewable Energy Project Prioritization</h3>
-    <p>
-      Employed SWOT and Critical Path Method (CPM) analyses to create a proposal for a portfolio management framework to prioritize regional renewable
-      energy projects. Proposed success metrics (e.g., Return on Investment, Megawatt-Hours Generated) and governance KPIs tracked via centralized, interactive
-      dashboards (Project Management Institute, 2024).
-    </p>
-    <p><em>Case Summary →</em> GridSmart is a strategic initiative aimed at optimizing investment in solar and wind farm development. The proposal outlines a framework for
-      a centralized Project Management Office (PMO) responsible for project selection, resource allocation, and risk mitigation, ensuring all energy infrastructure
-      initiatives align with federal sustainability goals and regional energy demands.
-    </p>
-
-    <a href="index.html" class="btn">← Back to Home</a>
-  </section>
-
 </body>
 </html>
