@@ -1,771 +1,336 @@
-/* --- Modern gradient & card style --- */
+/* Global layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  /* soft modern gradient background */
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f5f7fa;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  line-height: 1.6;
   margin: 0;
-  padding: 0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #eef3ff 0, #c6d4ea 40%, #a5b5cf 100%);
+  color: #111827;
 }
 
-/* make Quarto content box stand out slightly */
-main.content {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 1100px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-}
-
-/* headings pop with gradient accent */
-h1, h2, h3 {
-  background: linear-gradient(90deg, #25e3e6, #00b3b3);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-/* links */
-a {
-  color: #25e3e6;
-  text-decoration: none;
-}
-a:hover {
-  color: #00f5ff;
-  text-decoration: underline;
-}
-
-/* optional: make profile logo round */
-img {
-  border-radius: 12px;
-}
-/* --- Social media circular glowing buttons (Royal Blue & Gold theme) --- */
-.social-icons {
+/* simple center wrapper */
+.page-shell {
+  min-height: 100vh;
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  flex-direction: column;
+  padding: 32px 16px;
 }
 
-.social-icons a {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #f5b700;           /* gold outline */
-  color: #f5b700;                      /* gold icon */
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
+/* Top nav / header */
+.site-header {
+  max-width: 1120px;
+  margin: 0 auto 32px auto;
+  padding: 16px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
-}
-
-/* Hover animation — gold glow + blue inversion */
-.social-icons a:hover {
-  background: linear-gradient(135deg, #0a1f44, #102a5c);
-  color: #ffd84d;
-  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
-  transform: scale(1.15);
-}
-
-.social-icons a {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: popIn 0.6s ease-out forwards;
-}
-
-.social-icons a:nth-child(1) { animation-delay: 0.2s; }
-.social-icons a:nth-child(2) { animation-delay: 0.4s; }
-.social-icons a:nth-child(3) { animation-delay: 0.6s; }
-.social-icons a:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes popIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
-/* --- Hero layout side-by-side --- */
-.hero-container {
-  display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 40px;
-  margin-top: 20px;
-  flex-wrap: wrap; /* stacks vertically on smaller screens */
+  backdrop-filter: blur(12px);
 }
 
-.hero-left {
-  flex: 1;
-  min-width: 260px;
-}
-
-.hero-right {
-  flex: 1.3;
-  min-width: 320px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid rgba(255, 255, 255, 0.6);
-  padding: 16px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-}
-
-.hero-right h3 {
-  color: #ffd84d;
-  margin: 0 0 10px 0;
-}
-
-.hero-right p {
-  color: #f1f1f1;
-  line-height: 1.7;
-}
-
-/* Social icons layout (horizontal row) */
-.social-icons {
+.brand-area {
   display: flex;
-  gap: 15px;
-  margin-top: 12px;
+  align-items: center;
+  gap: 10px;
 }
 
-.social-icons a {
-  width: 50px;
-  height: 50px;
+.brand-icon {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #f5b700;
-  color: #f5b700;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
-}
-
-.social-icons a:hover {
-  background: linear-gradient(135deg, #0a1f44, #102a5c);
-  color: #ffd84d;
-  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
-  transform: scale(1.12);
-}
-:root{
-  /* Background + panel */
-  --bg-1: #0f2027;                 /* page gradient start */
-  --bg-2: #203a43;                 /* page gradient mid  */
-  --bg-3: #2c5364;                 /* page gradient end  */
-  --panel-solid: #1B2F36;          /* solid eq. of your glass panel */
-  --panel: rgba(27, 47, 54, 0.86); /* glass overlay that guarantees contrast */
-
-  /* Text & accents (all AA+, most AAA) */
-  --text:    #EAF2F7;  /* body */
-  --muted:   #C8D1DA;  /* secondary text */
-  --heading: #CFF1F5;  /* h1–h3 */
-  --link:    #25E3E6;  /* links */
-  --gold:    #F5B700;  /* icon ring */
-}
-
-/* page background */
-body{
-  background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
-  color: var(--text);
-}
-
-/* main content container (your big rounded panel) */
-main.content{
-  background: var(--panel);
-  color: var(--text);
-}
-
-/* headings and links with accessible contrast */
-h1,h2,h3{ color: var(--heading); }
-a{ color: var(--link); }
-
-/* the “About Myself” block (keeps contrast even on gradients) */
-.hero-right blockquote{
-  border-left: 3px solid rgba(255,255,255,0.65);
-  color: var(--text);
-}
-.hero-right p{ color: var(--muted); }
-
-/* social icons already use gold; ensure focus & hover stay visible */
-.social-icons a{
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.social-icons a:focus{
-  outline: 3px solid var(--heading);
-  outline-offset: 2px;
-}
-/* --- Modern gradient & card style --- */
-body {
-  /* soft modern gradient background */
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f5f7fa;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-/* make Quarto (or main) content box stand out slightly */
-main.content {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 1100px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-}
-
-/* headings pop with gradient accent */
-h1, h2, h3 {
-  background: linear-gradient(90deg, #25e3e6, #00b3b3);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-/* links */
-a {
-  color: #25e3e6;
-  text-decoration: none;
-}
-a:hover {
-  color: #00f5ff;
-  text-decoration: underline;
-}
-
-/* optional: make profile logo round by default */
-img {
-  border-radius: 12px;
-}
-
-/* --- Social media circular glowing buttons (Royal Blue & Gold theme) --- */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-icons a {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #f5b700;           /* gold outline */
-  color: #f5b700;                      /* gold icon */
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
-}
-
-/* Hover animation — gold glow + blue inversion */
-.social-icons a:hover {
-  background: linear-gradient(135deg, #0a1f44, #102a5c);
-  color: #ffd84d;
-  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
-  transform: scale(1.15);
-}
-
-/* small pop-in animation */
-.social-icons a {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: popIn 0.6s ease-out forwards;
-}
-
-.social-icons a:nth-child(1) { animation-delay: 0.2s; }
-.social-icons a:nth-child(2) { animation-delay: 0.4s; }
-.social-icons a:nth-child(3) { animation-delay: 0.6s; }
-.social-icons a:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes popIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* --- Hero layout side-by-side (used on all portfolios) --- */
-.hero-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-  margin-top: 20px;
-  flex-wrap: wrap; /* stacks vertically on smaller screens */
-}
-
-.hero-left {
-  flex: 1;
-  min-width: 260px;
-}
-
-.hero-right {
-  flex: 1.3;
-  min-width: 320px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid rgba(255, 255, 255, 0.6);
-  padding: 16px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-}
-
-.hero-right h3 {
-  color: #ffd84d;
-  margin: 0 0 10px 0;
-}
-
-.hero-right p {
-  color: #f1f1f1;
-  line-height: 1.7;
-}
-
-/* Social icons layout (horizontal row) */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 12px;
-}
-
-.social-icons a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #f5b700;
-  color: #f5b700;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 6px rgba(245, 183, 0, 0.3);
-}
-
-.social-icons a:hover {
-  background: linear-gradient(135deg, #0a1f44, #102a5c);
-  color: #ffd84d;
-  box-shadow: 0 0 15px #ffd84d, 0 0 30px rgba(245, 183, 0, 0.4);
-  transform: scale(1.12);
-}
-
-/* --- Theme variables for contrast --- */
-:root{
-  /* Background + panel */
-  --bg-1: #0f2027;                 /* page gradient start */
-  --bg-2: #203a43;                 /* page gradient mid  */
-  --bg-3: #2c5364;                 /* page gradient end  */
-  --panel-solid: #1B2F36;          /* solid eq. of glass panel */
-  --panel: rgba(27, 47, 54, 0.86); /* glass overlay that guarantees contrast */
-
-  /* Text & accents */
-  --text:    #EAF2F7;  /* body */
-  --muted:   #C8D1DA;  /* secondary text */
-  --heading: #CFF1F5;  /* h1–h3 */
-  --link:    #25E3E6;  /* links */
-  --gold:    #F5B700;  /* icon ring */
-}
-
-/* page background */
-body{
-  background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
-  color: var(--text);
-}
-
-/* main content container (big rounded panel) */
-main.content{
-  background: var(--panel);
-  color: var(--text);
-}
-
-/* headings and links with accessible contrast */
-h1,h2,h3{ color: var(--heading); }
-a{ color: var(--link); }
-
-/* about block in “old” layout */
-.hero-right blockquote{
-  border-left: 3px solid rgba(255,255,255,0.65);
-  color: var(--text);
-}
-.hero-right p{ color: var(--muted); }
-
-/* social icons focus styling */
-.social-icons a{
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.social-icons a:focus{
-  outline: 3px solid var(--heading);
-  outline-offset: 2px;
-}
-
-/* ================================
-   NAVIGATION BAR
-================================ */
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: rgba(10, 20, 30, 0.95);
-  padding: 18px 60px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-}
-
-.navbar .logo {
-  color: #00ffff;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-right: auto;
-}
-
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
   color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  white-space: nowrap;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.navbar .nav-links li a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* ================================
-   HERO SECTION
-================================ */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 140px 80px 80px;
-  background: linear-gradient(145deg, #081621, #0b1d26);
-  color: white;
-  min-height: 90vh;
-}
-
-.hero-content {
-  max-width: 50%;
-}
-
-.hero-content h1 {
-  font-size: 50px;
-  margin-bottom: 15px;
-}
-
-.hero-content h1 span {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-  display: inline;
-  white-space: nowrap; /* prevent “Akash/Harjit Sharma” from breaking */
-}
-
-.hero-content h3 {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color: #a8b2c1;
-}
-
-.hero-content p {
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.hero-content .btn {
-  background: #00ffff;
-  color: #081621;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
+.brand-name {
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 18px;
+  color: #111827;
 }
 
-.hero-content .btn:hover {
-  background: #00cccc;
-  transform: translateY(-3px);
-  box-shadow: 0 0 15px #00ffff;
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
-.hero-image img {
-  width: 260px;
-  border-radius: 50%;
-  box-shadow: 0 0 40px #00ffff;
+.main-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* ================================
-   GENERIC SECTIONS
-================================ */
-section {
-  padding: 100px 60px;
+.main-nav a:hover {
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.main-nav .nav-cta {
+  padding: 8px 18px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   color: #ffffff;
-  background: #0b1d26;
+  box-shadow: 0 10px 25px rgba(129, 140, 248, 0.4);
 }
 
-section h2 {
-  color: #00ffff;
-  font-size: 32px;
-  margin-bottom: 20px;
+.main-nav .nav-cta:hover {
+  color: #ffffff;
+}
+
+/* Main content area */
+.main-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* Hero Card */
+.hero-card {
+  display: flex;
+  gap: 40px;
+  padding: 40px 44px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #f9fafb, #e5edff);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
+  align-items: center;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
   text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0 0 10px 0;
 }
 
-/* ================================
-   SMOOTH SCROLL
-================================ */
-html {
-  scroll-behavior: smooth;
+.hero-left h1 {
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  color: #111827;
 }
 
-/* ================================
-   RESPONSIVE (Mobile)
-================================ */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-content, .hero-image {
-    max-width: 100%;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-  }
+.hero-left h1 span {
+  display: inline-block;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Hide old “About Myself” right-side block if present */
-#about-myself, .hero-right { 
-  display: none !important; 
+.hero-subtitle {
+  margin: 0 0 24px 0;
+  color: #4b5563;
+  font-size: 15px;
+  max-width: 520px;
 }
 
-/* Icons row under hero button (Akash/Harjit layout) */
-.socials {
-  margin-top: 18px;
+/* Buttons */
+.hero-actions {
   display: flex;
   gap: 14px;
-  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
-.socials .social {
-  width: 40px;
-  height: 40px;
+.btn-primary,
+.btn-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  color: #0b1d26;
-  background: #00ffff;
-  box-shadow: 0 0 12px rgba(0,255,255,0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
-  text-decoration: none;
-}
-
-.socials .social:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 18px rgba(0,255,255,0.9);
-  background: #00cccc;
-  color: #081621;
-}
-
-.hero-content .socials { 
-  margin-top: 16px; 
-}
-
-/* ABOUT / EDUCATION / EXPERIENCE sections (inner pages) */
-#about-page, #education, #experience {
-  padding: 60px 60px;
-  color: white;
-  background: linear-gradient(145deg, #081621, #0b1d26);
-  min-height: auto;
-  margin-bottom: 0;
-}
-
-#about-page h2, #education h2, #experience h2 {
-  color: #00ffff;
-  text-transform: uppercase;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-#education p, #about-page p, #experience p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-#experience h3 {
-  color: #00cccc;
-  margin-top: 25px;
-}
-
-#experience .btn {
-  display: inline-block;
-  background: #00ffff;
-  color: #081621;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-size: 14px;
   font-weight: 600;
-  transition: 0.3s;
-}
-
-#experience .btn:hover {
-  background: #00cccc;
-  box-shadow: 0 0 15px #00ffff;
-}
-
-#education, #experience {
-  border-top: 1px solid #0f2a38;
-  padding-top: 40px;
-  margin-top: 20px;
-}
-
-/* PORTFOLIO inner page */
-#portfolio-page {
-  padding: 80px 60px;
-  background: linear-gradient(145deg, #081621, #0b1d26);
-  color: white;
-  min-height: 100vh;
-}
-
-#portfolio-page h2 {
-  color: #00ffff;
-  text-transform: uppercase;
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-#portfolio-page h3 {
-  color: #00cccc;
-  margin-top: 30px;
-}
-
-#portfolio-page p {
-  line-height: 1.8;
-  margin-bottom: 15px;
-}
-
-#portfolio-page .btn {
-  display: inline-block;
-  background: #00ffff;
-  color: #081621;
-  padding: 12px 25px;
-  border-radius: 25px;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+    color 0.18s ease;
 }
 
-#portfolio-page .btn:hover {
-  background: #00cccc;
-  box-shadow: 0 0 15px #00ffff;
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: #ffffff;
+  box-shadow: 0 16px 35px rgba(129, 140, 248, 0.55);
 }
 
-/* Offset for fixed nav when scrolling to anchors */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(129, 140, 248, 0.75);
 }
 
-#about-page, #education, #experience, #portfolio-page {
-  scroll-margin-top: 90px;
+.btn-ghost {
+  background: #ffffff;
+  color: #4b5563;
+  border: 1px solid rgba(148, 163, 184, 0.7);
 }
 
-/* Uniform spacing for sections (where used) */
-section {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.btn-ghost:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
 }
 
-section h2 {
-  margin-bottom: 25px;
-  text-align: left;
-  color: #00ffff;
+/* Stats row */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.stat-card {
+  min-width: 120px;
+  padding: 14px 16px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 1px;
+  color: #111827;
 }
 
-/* NAV — more robust for smaller widths */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 12px 16px;
-  z-index: 1000;
+.stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
 }
 
-.nav-links {
+/* Right image card */
+.photo-card {
+  border-radius: 28px;
+  background: radial-gradient(circle at top, #ffffff 0, #e5edff 55%, #d1ddff 100%);
+  padding: 18px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+/* Contact strip */
+.contact-strip {
+  margin-top: 32px;
+  padding: 22px 26px;
+  border-radius: 24px;
+  background: rgba(248, 250, 252, 0.95);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-  flex-wrap: wrap;      /* allow second row instead of clipping */
-  list-style: none;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-strip h2 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+
+.contact-strip p {
   margin: 0;
-  padding: 0;
-  max-width: 100%;
+  font-size: 14px;
+  color: #4b5563;
 }
 
-.nav-links a {
+.contact-strip a {
+  color: #6366f1;
   text-decoration: none;
-  white-space: nowrap;
 }
 
-@media (max-width: 1100px) {
-  .nav-links { gap: 12px; }
+.contact-strip a:hover {
+  text-decoration: underline;
 }
+
+/* Footer */
+.site-footer {
+  max-width: 1120px;
+  margin: 28px auto 0 auto;
+  padding: 8px 4px;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
-  .nav-links a { font-size: 0.95rem; }
-}
-@media (max-width: 700px) {
-  .nav-links { width: 100%; justify-content: flex-start; }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    padding: 28px 22px;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .photo-card img {
+    max-width: 260px;
+  }
 }
 
-/* prevent horizontal scrollbars */
-html, body { overflow-x: hidden; }
+@media (max-width: 600px) {
+  .page-shell {
+    padding: 20px 10px;
+  }
 
-/* base sizing */
-* { box-sizing: border-box; }
+  .site-header {
+    padding: 12px 16px;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .contact-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
