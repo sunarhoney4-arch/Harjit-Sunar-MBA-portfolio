@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Harjit Sunar — Skills & Strengths</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Skills · Harjit Sunar — MBA Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-area">
+        <div class="brand-icon">H</div>
+        <span class="brand-name">Harjit Sunar</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">Harjit Sunar </div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="skills.html" class="active">Skills</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <main class="main-content">
+      <section class="page-section-card">
+        <h1>Core Skills &amp; Strengths</h1>
+        <p class="section-intro">
+          I combine analytical thinking, project-management discipline, and strong
+          communication skills to support data-driven decision making and drive
+          operational improvement.
+        </p>
 
-  <!-- Skills Section -->
-  <section id="skills-page">
-    <h2>Core Skills & Strengths</h2>
+        <div class="two-column-layout">
+          <div class="column-block">
+            <h2>Management &amp; Analytics Tools</h2>
+            <div class="tag-list">
+              <span class="tag-pill">Asana</span>
+              <span class="tag-pill">MS Excel</span>
+              <span class="tag-pill">Quarto</span>
+              <span class="tag-pill">Salesforce</span>
+              <span class="tag-pill">QuickBooks</span>
+              <span class="tag-pill">SAP</span>
+              <span class="tag-pill">Figma</span>
+              <span class="tag-pill">Miro</span>
+            </div>
 
-    <p><strong>Management Tools:</strong> Asana, MS Excel, Quarto, Salesforce, Quick Books, SAP,Figma, Miro.</p>
-    <p><strong>Analytical Skills:</strong> Predictive Modeling, A/B Testing,Competitive Landscaping.</p>
-    <p><strong>Leadership Strengths:</strong> Change Management, Cross-functional Team Leadership, Strategic Alignment.</p>
-    <p><strong>Soft Skills:</strong> Clear communication, Delegation,Conflict Resolution, continuous learning mindset.</p>
-    <a href="index.html" class="btn">← Back to Portfolio</a>
-  </section>
+            <h2>Analytical Skills</h2>
+            <ul class="skill-list">
+              <li>Predictive Modelling &amp; trend analysis</li>
+              <li>A/B testing and experiment design</li>
+              <li>Competitive and market landscape analysis</li>
+            </ul>
+          </div>
 
+          <div class="column-block">
+            <h2>Leadership Strengths</h2>
+            <ul class="skill-list">
+              <li>Change Management and continuous-improvement mindset</li>
+              <li>Cross-functional team coordination</li>
+              <li>Strategic alignment between operations and business goals</li>
+            </ul>
+
+            <h2>Soft Skills</h2>
+            <ul class="skill-list">
+              <li>Clear, concise communication with stakeholders</li>
+              <li>Delegation and task prioritization</li>
+              <li>Conflict resolution and relationship-building</li>
+              <li>Curiosity and a strong commitment to ongoing learning</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Harjit Sunar · MBA Portfolio</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
